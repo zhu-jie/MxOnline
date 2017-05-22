@@ -1,1 +1,6 @@
 *.pyc
+.idea/MxOnline.iml
+.idea/dictionaries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
