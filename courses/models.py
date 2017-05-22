@@ -14,7 +14,7 @@ class Course(models.Model):
     desc = models.CharField(max_length=300,verbose_name=u"课程描述")
     detail = models.TextField(verbose_name=u"课程详情")
     degree = models.CharField(choices=(("cj",u"初级"),("zj",u"中级"),("gj",u"高级")),max_length=2)
-    learn_times = models.IntegerField(default=0,verbose_name=u"学习时长(分钟数)）")
+    learn_times = models.IntegerField(default=0,verbose_name=u"学习时长(分钟数))")
     students = models.IntegerField(default=0,verbose_name=u"学习人数")
     fav_nums = models.IntegerField(default=0,verbose_name=u"收藏人数")
     image = models.ImageField(upload_to="courses/%Y/%m",verbose_name=u"封面图",max_length=100)
@@ -38,8 +38,11 @@ class Lesson(models.Model):
         verbose_name_plural = verbose_name
 
 class Video(models.Model):
+    '''
+    视频名
+    '''
     lesson = models.ForeignKey(Lesson,verbose_name=u'章节')
-    name = models.CharField(max_length=100,verbose_name=u"视频节名")
+    name = models.CharField(max_length=100,verbose_name=u"视频名")
     add_time = models.DateTimeField(default=datetime.now,verbose_name=u'添加时间')
 
     class Meta:
