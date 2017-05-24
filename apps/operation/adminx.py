@@ -9,9 +9,9 @@ from .models import UserAsk,CourseComments,UserFavorite,UserMessage,UserCourse
 
 
 class UserAskAdmin(object):
-    list_display = ['name','mobile','add_time']
-    search_fields = ['name','mobile']
-    list_filter = ['name','mobile','add_time'] #非常强大的过滤器
+    list_display = ['name','mobile','course_name','add_time']
+    search_fields = ['name','mobile','course_name']
+    list_filter = ['name','mobile','course_name','add_time'] #非常强大的过滤器
 
 
 class CourseCommentsAdmin(object):
@@ -34,12 +34,12 @@ class UserMessageAdmin(object):
 
 class UserCourseAdmin(object):
     list_display = ['user','course','add_time']
-    search_fields = ['user','course','fav_id','fav_type']
-    list_filter = ['user','course','fav_id','fav_type','add_time']
+    search_fields = ['user','course',]
+    list_filter = ['user','course','add_time']
 
 
 xadmin.site.register(UserAsk,UserAskAdmin)
 xadmin.site.register(CourseComments,CourseCommentsAdmin)
 xadmin.site.register(UserFavorite,UserFavoriteAdmin)
-xadmin.site.register(UserCourse,UserCourseAdmin)
 xadmin.site.register(UserMessage,UserMessageAdmin)
+xadmin.site.register(UserCourse,UserCourseAdmin)
